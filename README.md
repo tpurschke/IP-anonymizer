@@ -46,6 +46,7 @@ as well as a.b.c.d/xy notation) will match by simply setting
 all netmasks to /32. 
 
 EXAMPLES
+
 ./iso-anonymizer.pl -net=172.20.0.0/21 -txt-subst-file=/var/tmp/strings.txt /var/tmp/firewall17.cfg /var/tmp/router9.cfg
 
  tim@lacantha:$ sudo perl iso-anonymizer.pl -txt-subst-file=strings.txt /var/tmp/netscreen1.cfg
@@ -65,12 +66,16 @@ Anonymizing a whole (ASCII) Postgresql database:
   psql --set ON_ERROR_STOP=on targetdb </var/tmp/iso_db.dump.sql
 
 TODO
+
 - reliably replace network address by networks with consistent netmasks
   (currently all networks are reduced to a /32 netmask)
 
 AUTHOR
-Tim Purschke E<lt>tmp@cactus.deE<gt>
+
+Tim Purschke tmp@cactus.de
 
 COPYRIGHT AND LICENSE
+
 Copyright (C) 2016 by Cactus eSecurity GmbH
+
 GNU Public license v2
