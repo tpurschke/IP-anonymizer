@@ -8,8 +8,8 @@ SYNOPSIS
 DESCRIPTION
 
 This is a script for 
-a) replacing IP addresses in plain text with anonymized equivalents from 
-the network range supplied.
+
+a) replacing IP addresses in plain text with anonymized equivalents from the network range supplied.
 
 b) replacing strings in a file with anonymized strings
 
