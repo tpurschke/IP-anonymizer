@@ -24,12 +24,16 @@ test system. This way you can protect an organization's
 identity at the same time.
 
 Caveats: 
+
 - currently only implemented for IPv4
+
 - beware of anonymizing common strings; e.g. "INT" when handling database dumps is part of keyword CONSTRAINT
   use slightly longer strings like "INT_" instead
 
 Params:
+
 - The network range used for replacement, is set to "10.0.0.0/8" if omitted.
+
 - For each file <infile> supplied an anonymized file called 
   <infile>.anonymized is created.
 
@@ -50,19 +54,33 @@ EXAMPLES
 ./iso-anonymizer.pl -net=172.20.0.0/21 -txt-subst-file=/var/tmp/strings.txt /var/tmp/firewall17.cfg /var/tmp/router9.cfg
 
  tim@lacantha:$ sudo perl iso-anonymizer.pl -txt-subst-file=strings.txt /var/tmp/netscreen1.cfg
+
  no net specified, using default net 10.0.0.0/8
+
  anonymizing: /var/tmp/netscreen1.cfg ... result file = /var/tmp/netscreen1.cfg.anonymized
+
  Anonymized 20197 ip addresses and 150 strings in 31.1 seconds (0.46 Mbytes/second).
+
  tim@lacantha:~$ 
  
 Anonymizing a whole (ASCII) Postgresql database:
+
   # creating an ASCII dump of the database:
+
   pg_dump -U dbadmin -d isodb -W >/var/tmp/iso_db.dump.sql
+
   # or as postgres user:  pg_dump -d isodb >/var/tmp/iso_db.dump.sql
-  # turn binary .Fc dump into ascii (only necessary if you do not already have an ascii dump): pg_restore /var/tmp/iso_db.dump.Fc >/var/tmp/iso_db.dump.sql
+
+  # turn binary .Fc dump into ascii (only necessary if you do not already have an ascii dump): pg_restore 
+
+  /var/tmp/iso_db.dump.Fc >/var/tmp/iso_db.dump.sql
+
   # anonymizing:
+
   iso-anonymizer.pl -txt-subst-file=/var/tmp/strings.txt /var/tmp/iso_db.dump.sql
+
   # restoring anonymized database:
+
   psql --set ON_ERROR_STOP=on targetdb </var/tmp/iso_db.dump.sql
 
 TODO
