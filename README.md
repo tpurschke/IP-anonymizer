@@ -3,7 +3,7 @@
 iso-anonymizer.pl - replace IP addresses with anonymized IPs as well as text with anonymized text in plain text files
 
 SYNOPSIS
-  ./iso-anonymizer.pl [-txt-subst-file=/var/tmp/strings.txt] [-net="192.168.0.0/16"] <config-file1 config-file2 ...> 
+  ./iso-anonymizer.pl [-txt-subst-file=/var/tmp/strings.txt] [-net="192.168.0.0/16"] config-file1 config-file2 ...
 
 DESCRIPTION
 
