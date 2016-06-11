@@ -78,4 +78,4 @@ COPYRIGHT AND LICENSE
 
 Copyright (C) 2016 by Cactus eSecurity GmbH
 
-GNU Public license v2
+GNU GENERAL PUBLIC LICENSE Version 3
