@@ -1,4 +1,4 @@
-# iso-anonymizer
+# IP anonymizer
 
 iso-anonymizer.pl - replace IP addresses with anonymized IPs as well as text with anonymized text in plain text files
 
