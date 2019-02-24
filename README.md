@@ -65,21 +65,20 @@ EXAMPLES
  
 Anonymizing a whole (ASCII) Postgresql database:
 
-  # creating an ASCII dump of the database:
+  creating an ASCII dump of the database:
 
-  pg_dump -U dbadmin -d isodb -W >/var/tmp/iso_db.dump.sql
+     pg_dump -U dbadmin -d isodb -W >/var/tmp/iso_db.dump.sql
 
-  # or as postgres user:  pg_dump -d isodb >/var/tmp/iso_db.dump.sql
+  or as postgres user:  pg_dump -d isodb >/var/tmp/iso_db.dump.sql
 
-  # turn binary .Fc dump into ascii (only necessary if you do not already have an ascii dump): pg_restore 
+  turn binary .Fc dump into ascii (only necessary if you do not already have an ascii dump):
+     pg_restore /var/tmp/iso_db.dump.Fc >/var/tmp/iso_db.dump.sql
 
-  /var/tmp/iso_db.dump.Fc >/var/tmp/iso_db.dump.sql
-
-  # anonymizing:
+  anonymizing:
 
   iso-anonymizer.pl -txt-subst-file=/var/tmp/strings.txt /var/tmp/iso_db.dump.sql
 
-  # restoring anonymized database:
+  restoring anonymized database:
 
   psql --set ON_ERROR_STOP=on targetdb </var/tmp/iso_db.dump.sql
 
