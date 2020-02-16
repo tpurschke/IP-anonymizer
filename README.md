@@ -85,11 +85,9 @@ TODO
 
 AUTHOR
 
-Tim Purschke tmp@cactus.de
+Tim Purschke tmp@cactus.de, Cactus eSecurity GmbH, Germany
 
 COPYRIGHT AND LICENSE
-
-Copyright (C) 2016 by Cactus eSecurity GmbH
 
 GNU GENERAL PUBLIC LICENSE Version 3
 
