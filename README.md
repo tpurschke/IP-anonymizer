@@ -1,9 +1,9 @@
 # IP anonymizer
 
-iso-anonymizer.pl - replace IP addresses with anonymized IPs as well as text with anonymized text in plain text files
+cactus-anonymizer.pl - replace IP addresses with anonymized IPs as well as text with anonymized text in plain text files
 
 SYNOPSIS
-  ./iso-anonymizer.pl [-txt-subst-file=/var/tmp/strings.txt] [-net="192.168.0.0/16"] config-file1 config-file2 ...
+  ./cactus-anonymizer.pl [-txt-subst-file=/var/tmp/strings.txt] [-net="192.168.0.0/16"] config-file1 config-file2 ...
 
 DESCRIPTION
 
@@ -51,9 +51,9 @@ all netmasks to /32.
 
 EXAMPLES
 
- a) ./iso-anonymizer.pl -net=172.20.0.0/21 -txt-subst-file=/var/tmp/strings.txt /var/tmp/fw.cfg /var/tmp/router9.cfg
+ a) ./cactus-anonymizer.pl -net=172.20.0.0/21 -txt-subst-file=/var/tmp/strings.txt /var/tmp/fw.cfg /var/tmp/router9.cfg
 
- b) iso-anonymizer.pl -txt-subst-file=strings.txt /tmp/netscreen1.cfg
+ b) cactus-anonymizer.pl -txt-subst-file=strings.txt /tmp/netscreen1.cfg
  
     Output:
     no net specified, using default net 10.0.0.0/8
@@ -64,19 +64,19 @@ EXAMPLES
   c) Anonymizing a whole (ASCII) Postgresql database:
 
      creating an ASCII dump of the database:
-       pg_dump -U dbadmin -d isodb -W >/var/tmp/iso_db.dump.sql
+       pg_dump -U dbadmin -d cactusdb -W >/var/tmp/cactus_db.dump.sql
 
      or as postgres user:
-       pg_dump -d isodb >/var/tmp/iso_db.dump.sql
+       pg_dump -d cactusdb >/var/tmp/cactus_db.dump.sql
 
      turn binary .Fc dump into ascii (only necessary if you do not already have an ascii dump):
-       pg_restore /var/tmp/iso_db.dump.Fc >/var/tmp/iso_db.dump.sql
+       pg_restore /var/tmp/cactus_db.dump.Fc >/var/tmp/cactus_db.dump.sql
 
      anonymizing:
-       iso-anonymizer.pl -txt-subst-file=/var/tmp/strings.txt /var/tmp/iso_db.dump.sql
+       cactus-anonymizer.pl -txt-subst-file=/var/tmp/strings.txt /var/tmp/cactus_db.dump.sql
 
      restoring anonymized database:
-       psql --set ON_ERROR_STOP=on targetdb </var/tmp/iso_db.dump.sql
+       psql --set ON_ERROR_STOP=on targetdb </var/tmp/cactus_db.dump.sql
 
 TODO
 
