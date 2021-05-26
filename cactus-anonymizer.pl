@@ -159,7 +159,7 @@ sub anonymize {
 		# special case in cp r8x configs retrieved via API
 		# changing all ipv4 subnet masks to /32
 		#example: "mask-length4": 26,
-		$line =~ s/(\s*\"mask-length4\"): (\d+)\,/$1: 32,/;
+		$line =~ s/(\s*\"mask-length4\"): (\d+)\,/$1: 32,/g;
 
 		if (defined($txt_subst_file) && $txt_subst_file ne '') { # obfuscating text
 			my $regex_all_texts = join("|", map {quotemeta} keys %anonymized_text);
